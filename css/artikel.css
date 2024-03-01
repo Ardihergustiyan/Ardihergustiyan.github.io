@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+h3 {
+  color: #2d3e50;
+}
+h2 a {
+  text-decoration: none;
+  color: #2d3e50;
+}
+
+footer {
+  padding: 20px;
+  color: #2d3e50;
+  background-color: white;
+
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Mengatur tampilan navbar */
+header.navbar-container {
+  width: 100%; /* Menetapkan lebar penuh */
+  max-width: 1200px; /* Mengatur lebar maksimum */
+  padding-block: 1rem; /* Padding atas dan bawah */
+  margin-inline: auto; /* Posisi navbar di tengah secara horizontal */
+  display: flex; /* Menggunakan flexbox untuk layout */
+  justify-content: space-around; /* Menyusun item navbar secara merata */
+  align-items: center; /* Mengatur posisi vertikal item navbar */
+  z-index: 9999; /* Mengatur kedalaman tumpukan untuk menempatkan navbar di atas elemen lain */
+
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+/* Mengatur logo di dalam navbar */
+header.navbar-container .logo img {
+  width: 150px; /* Mengatur lebar gambar logo */
+}
+
+/* Mengatur daftar navigasi di dalam navbar */
+header.navbar-container .nav-list ul {
+  padding-left: 0; /* Menghapus padding kiri pada daftar navigasi */
+  display: flex; /* Menggunakan flexbox untuk layout */
+  justify-content: center; /* Menyusun item navigasi secara merata */
+  gap: 2rem 1rem; /* Menambahkan jarak antar item navigasi */
+}
+
+/* Mengatur tautan di dalam daftar navigasi */
+header.navbar-container .nav-list li {
+  list-style-type: none; /* Menghilangkan tanda bullet dari daftar navigasi */
+}
+
+/* Mengatur tampilan tautan di dalam daftar navigasi */
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Mengatur tampilan tautan di dalam daftar navigasi saat dihover */
+header.navbar-container .nav-list li:hover a {
+  background-color: #425c77;
+  color: white;
+}
+
+/* Mengatur tampilan gambar fitur */
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Mengatur tampilan gambar pada elemen dengan kelas 'profile' */
+.profile img {
+  max-width: 200px;
+}
+
+/* Mengatur tampilan kartu */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+
+  display: flex;
+  gap: 1.5rem;
+}
+
+#content {
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+aside {
+  flex: 1;
+}
+
+/* Perangkat dengan lebar layar 1200px dan di bawahnya */
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+/* Perangkat dengan lebar layar 768px dan di bawahnya */
+@media screen and (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column;
+  }
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+  nav ul {
+    justify-content: center;
+  }
+  main aside {
+    align-self: stretch;
+  }
+}

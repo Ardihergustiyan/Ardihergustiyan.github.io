@@ -1,0 +1,198 @@
+/* Mengatur kotak model untuk semua elemen, termasuk pseudo-elemen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Mengatur kotak model untuk termasuk border dan padding */
+}
+
+/* Mengatur tampilan body */
+body {
+  font-family: 'Quicksand', sans-serif; /* Menggunakan font Quicksand untuk teks dalam body */
+  height: 100vh; /* Mengisi tinggi viewport */
+  margin: 0; /* Menghapus margin default */
+  display: flex; /* Menggunakan flexbox untuk layout */
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+}
+
+/* Mengatur tampilan navbar */
+header.navbar-container {
+  width: 100%; /* Menetapkan lebar penuh */
+  max-width: 1200px; /* Mengatur lebar maksimum */
+  padding-block: 1rem; /* Padding atas dan bawah */
+  margin-inline: auto; /* Posisi navbar di tengah secara horizontal */
+  display: flex; /* Menggunakan flexbox untuk layout */
+  justify-content: space-around; /* Menyusun item navbar secara merata */
+  align-items: center; /* Mengatur posisi vertikal item navbar */
+  z-index: 9999; /* Mengatur kedalaman tumpukan untuk menempatkan navbar di atas elemen lain */
+}
+
+/* Mengatur logo di dalam navbar */
+header.navbar-container .logo img {
+  width: 150px; /* Mengatur lebar gambar logo */
+}
+
+/* Mengatur daftar navigasi di dalam navbar */
+header.navbar-container .nav-list ul {
+  padding-left: 0; /* Menghapus padding kiri pada daftar navigasi */
+  display: flex; /* Menggunakan flexbox untuk layout */
+  justify-content: center; /* Menyusun item navigasi secara merata */
+  gap: 2rem 1rem; /* Menambahkan jarak antar item navigasi */
+}
+
+/* Mengatur tautan di dalam daftar navigasi */
+header.navbar-container .nav-list li {
+  list-style-type: none; /* Menghilangkan tanda bullet dari daftar navigasi */
+}
+
+/* Mengatur tampilan tautan di dalam daftar navigasi */
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Mengatur tampilan tautan di dalam daftar navigasi saat dihover */
+header.navbar-container .nav-list li:hover a {
+  background-color: #425c77;
+  color: white;
+}
+
+/* Mengatur tampilan konten utama */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Mengatur tampilan konten */
+main .content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+/* Mengatur tampilan deskripsi konten */
+main .content .content-description {
+  flex: 1 1;
+}
+/* Mengatur tampilan judul konten */
+main .content .content-description .title {
+  margin-block: 1rem;
+  font-size: 3.5rem;
+}
+/* Mengatur tampilan paragraf dalam deskripsi konten */
+main .content .content-description p {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+/* Mengatur tampilan tombol dalam deskripsi konten */
+main .content .content-description button {
+  padding: 0.8rem 2.5rem;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  margin-block-start: 1rem;
+  background-color: #2d3e50;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+}
+main .content .content-description button a {
+  text-decoration: none; /* Menghapus dekorasi teks */
+  color: inherit; /* Mewarisi warna dari parent, dalam hal ini, putih */
+}
+/* Mengatur tampilan tombol dalam deskripsi konten saat dihover */
+main .content .content-description button:hover {
+  border: 3px solid #2d3e50;
+  background-color: transparent;
+  color: #2d3e50;
+}
+/* Mengatur tampilan gambar dalam konten */
+main .content .content-image {
+  flex: 1;
+  display: flex;
+}
+/* Mengatur tampilan gambar dalam konten */
+main .content .content-image img {
+  width: 300px;
+  min-width: 250px;
+  margin: auto;
+  border-radius: 50%;
+}
+/* Mengatur tampilan sidebar dalam konten */
+main aside {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+}
+/* Mengatur tampilan daftar media sosial dalam sidebar */
+main aside .social-media {
+  height: 100%;
+  display: flex;
+}
+/* Mengatur tampilan daftar media sosial */
+main aside .social-media ul {
+  padding: 1.5rem 1rem;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  margin: auto;
+  background-color: #2d3e50;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+/* Mengatur tampilan tautan media sosial */
+main aside .social-media li {
+  list-style-type: none;
+}
+/* Mengatur tampilan tautan media sosial */
+main aside .social-media li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+/* Mengatur tampilan tautan media sosial saat dihover */
+main aside .social-media li a:hover {
+  color: #89b0d9;
+}
+/* Medium devices (768px dan di bawahnya) */
+@media screen and (max-width: 768px) {
+  header.navbar-container {
+    flex-direction: column;
+  }
+  header.navbar-container .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+  main {
+    padding: 1rem 3rem;
+  }
+
+  main .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  main .content .content-description .title {
+    font-size: 3rem;
+  }
+  main .content .content-description p {
+    font-size: 1rem;
+  }
+  main .content .content-image {
+    order: -1;
+  }
+}
